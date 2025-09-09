@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'calculator_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -55,6 +56,21 @@ class MyHomePageState extends State<MyHomePage> {
             Text(
               '$_counter',
               style: Theme.of(context).textTheme.headlineMedium,
+            ),
+            const SizedBox(height: 40),
+            ElevatedButton.icon(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const CalculatorPage()),
+                );
+              },
+              icon: const Icon(Icons.calculate),
+              label: const Text('Open Calculator'),
+              style: ElevatedButton.styleFrom(
+                padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+                textStyle: const TextStyle(fontSize: 16),
+              ),
             ),
           ],
         ),
